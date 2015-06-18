@@ -24,4 +24,7 @@ public:
 	// Konstruktoren und Destruktor
 	DrawingObject();
 	~DrawingObject();
+
+	// Klassenmethoden
+	virtual void print(bool)const;
 };

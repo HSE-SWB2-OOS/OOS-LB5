@@ -16,12 +16,11 @@ Die Klasse ObjectCounter zählt Elemente, vergibt eindeutige IDs und verwaltet d
 */
 
 #pragma once
-
 class ObjectCounter {
 
 	// Variablen deklarieren
 	unsigned int id = 0;				// Speicher jeweils unveränderlich die ID des Objects
-	static unsigned int maxId;				// speichert die höchste vergebene ID
+	static unsigned int maxId ;				// speichert die höchste vergebene ID
 	static unsigned int number;			// speichert die Anzahl der Objekte einer Klasse
 
 	// Funktionsprototypen

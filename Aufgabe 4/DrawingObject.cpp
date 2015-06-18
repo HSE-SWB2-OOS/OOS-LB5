@@ -27,5 +27,12 @@ DrawingObject::DrawingObject() : ObjectCounter(){
 }
 DrawingObject::~DrawingObject(){
 	std::cout << std::endl << "Destruktor der Klasse DrawingObject, ObjectID: " << getId() << std::endl;
-};
+}
+
+void DrawingObject::print(bool = false)const{
+
+}
+
+;
+
 
