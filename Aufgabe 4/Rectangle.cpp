@@ -24,21 +24,30 @@ using namespace std;
 
 // Konstruktoren
 
-Rectangle::Rectangle(Point &pkt1 = Point(0,0), Point &pkt2 = Point(1,1)){
+Rectangle::Rectangle(Point &pkt1, Point &pkt2){
 	this->pktA = pkt1;
 	this->pktB = pkt2;
 }
 
 Rectangle::Rectangle(string &str){
+	str = MyString::remove(str, ' ');
 
+	// Eingabemuster für Rectangle: [(1.1),(2.2)/(3.3),(4.4)]
+	string pktA = str.substr((str.find("[") +1) , (str.find("/")-1));
+	string pktB = str.substr((str.find("/") +1) , (str.find("]")-1));
+
+	Point tempPktA(pktA);
+	Point tempPktB(pktB);
+
+	Rectangle(tempPktA, tempPktB);
 }
 
 void Rectangle::print(bool)const {
 	
 	cout << "[";
-	pktA.print(false);
+	this->pktA.print(false);
 	cout << " , ";
-	pktB.print(false);
+	this->pktB.print(false);
 	cout << "]" << endl;
 
 }

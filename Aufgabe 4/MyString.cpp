@@ -291,14 +291,24 @@ char & MyString::operator[] (unsigned int index)
 string MyString::remove(const string &str,const char c =' '){
 	
 	istringstream inputstring(str);
+	int strLen = str.length();
 	string returnStr;
 	char checkChar;
-	do
+	
+	for (size_t i = 0; i < strLen; i++)
 	{
 		inputstring >> checkChar;
 		if (checkChar != c)
 			returnStr += checkChar;
-	} while (inputstring);
+	}
+
+
+	//// Erzeugt einen Aufruf zu viel!
+	//while (inputstring != "/0"){
+	//	inputstring >> checkChar;
+	//	if (checkChar != c)
+	//		returnStr += checkChar;
+	//}
 
 	return returnStr;
 };

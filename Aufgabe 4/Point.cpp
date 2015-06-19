@@ -46,13 +46,12 @@ Point::Point(string str){
 	// Leerzeichen entfernen
 	str = MyString::remove(str, ' ');
 
-	int xStart = (int)str.find("(") + 1;
-	int xEnde = (int)str.find(",") - 1;
-	int yStart = (int)str.find(",") + 1;
-	int yEnde = (int)str.find(")") - 1;
-
-	this->setX(stod(str.substr(xStart, xEnde)));
-	this->setY(stod(str.substr(yStart, yEnde)));
+	// Eingabemuster für Punkt: (1.1,2.2)
+	string x = str.substr(str.find("(")+1, str.find(",")-1);
+	string y = str.substr(str.find(",")+1, str.length()-1);
+ 
+	this->setX(stod(x));
+	this->setY(stod(y));
 }
 
 // Destruktor
