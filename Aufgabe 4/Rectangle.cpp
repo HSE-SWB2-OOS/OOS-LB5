@@ -39,7 +39,8 @@ Rectangle::Rectangle(string &str){
 	Point tempPktA(pktA);
 	Point tempPktB(pktB);
 
-	Rectangle(tempPktA, tempPktB);
+	this->pktA = tempPktA;
+	this->pktB = tempPktB;
 }
 
 void Rectangle::print(bool)const {
